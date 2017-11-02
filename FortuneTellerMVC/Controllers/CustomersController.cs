@@ -33,6 +33,106 @@ namespace FortuneTellerMVC.Controllers
             {
                 return HttpNotFound();
             }
+
+
+            int retireYears = 0;
+
+            if (customer.Age % 2 == 1)
+            {
+                retireYears = 37;
+            }
+            if (customer.Age % 2 == 0)
+            {
+                retireYears = 73;
+            }
+
+            ViewBag.RetireYears = retireYears;
+
+
+
+            string moneyInBank = " ";
+
+            if (customer.BirthMonthID >= 1 && customer.BirthMonthID <= 4)
+            {
+                moneyInBank = "314.00 in the bank.";
+            }
+            else if (customer.BirthMonthID >= 5 && customer.BirthMonthID <= 8)
+            {
+                moneyInBank = "1,000,000.13 in the bank.";
+            }
+            else
+            {
+                moneyInBank = "123,456,789.00 in the bank.";
+            }
+
+            ViewBag.Money = moneyInBank;
+
+            string vacationHome = " ";
+
+            if (customer.NumberOfSiblings == 0)
+            {
+                vacationHome = "in Iceland...all alone";
+            }
+            else if (customer.NumberOfSiblings == 1)
+            {
+                vacationHome = "in Paris";
+            }
+            else if (customer.NumberOfSiblings == 2)
+            {
+                vacationHome = "in the beautiful land of Delaware";
+            }
+            else if (customer.NumberOfSiblings == 3)
+            {
+                vacationHome = "in Trinidad";
+            }
+            else if (customer.NumberOfSiblings >= 4)
+            {
+                vacationHome = "on a far away private island to get away from this giant family";
+            }
+            else
+            {
+                vacationHome = "in Arkansas";
+            }
+
+            ViewBag.VacationHome = vacationHome;
+
+            string transportation = " ";
+
+            if (customer.FavoriteColorID == 1)
+            {
+                transportation = "driving the same car you had when you were 22.";
+            }
+            else if (customer.FavoriteColorID == 2)
+            {
+                transportation = "driving a paddle boat shaped like a swan.";
+            }
+            else if (customer.FavoriteColorID == 3)
+            {
+                transportation = "driving a double-decker tourist bus.";
+            }
+            else if (customer.FavoriteColorID == 4)
+            {
+                transportation = "driving a car that is just a little bit too small for you.";
+            }
+            else if (customer.FavoriteColorID == 5)
+            {
+                transportation = "driving very sensible Honda Civic and telling eveyone about the great mileage.";
+            }
+            else if (customer.FavoriteColorID == 6)
+            {
+                transportation = "driving your grandmother's old car.";
+            }
+
+            else if (customer.FavoriteColorID == 7)
+            {
+                transportation = "driving one of those old-timey bikes with the one big wheel in the front.";
+            }
+            else
+            {
+                transportation = "you will be driving for Uber for the rest of your life.";
+            }
+            ViewBag.Transportation = transportation;
+
             return View(customer);
         }
 

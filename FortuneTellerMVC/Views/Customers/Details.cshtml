@@ -4,62 +4,17 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Here is your fortune</h2>
 
-<div>
-    <h4>Customer</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthMonth.BirthMonth1)
-        </dt>
+<div class="row">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</div>
+            <p>You will retire in <span>@ViewBag.RetireYears</span> years</p>            
 
-        <dd>
-            @Html.DisplayFor(model => model.BirthMonth.BirthMonth1)
-        </dd>
+            <p>You will have $<span>@ViewBag.Money</span></p>
+        
+            <p>You will be <span>@ViewBag.Transportation</span></p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FavoriteColor.FavoriteColor1)
-        </dt>
+            <p>You will have a vacation home in <span>@ViewBag.VacationHome</span>.</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.FavoriteColor.FavoriteColor1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NumberOfSiblings)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NumberOfSiblings)
-        </dd>
-
-    </dl>
-</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
     @Html.ActionLink("Back to List", "Index")
